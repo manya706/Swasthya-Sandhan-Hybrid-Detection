@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Disease Detection</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h1 class="text-center">Disease Detection</h1>
+  
+  <div class="row mt-4">
+    <div class="col-md-6 offset-md-3">
+      <form action="/search" method="GET">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for a disease..." name="query">
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-6 offset-md-3">
+      <h2 class="text-center">Quick Access</h2>
+      <div class="btn-group btn-block">
+        <button type="button" class="btn btn-secondary">Flu</button>
+        <button type="button" class="btn btn-secondary">COVID-19</button>
+        <button type="button" class="btn btn-secondary">Diabetes</button>
+        <!-- Add more disease buttons as needed -->
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
