@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://foliotek.github.io/Croppie/croppie.css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+
+    <!-- Template Main CSS File -->
+    <link rel="stylesheet" href="assets/css/detection.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+</head>
+
+<body>
+    <a href="index.html"><i class='bx bx-left-arrow-alt'></i></a>
+
+    <section id="upload" class="upload">
+        <div class="section-title">
+            <h2>Upload Your Image Here</h2>
+            <!-- <p>If your skin disease, matches with the images shown below, Wohoo! we already know the problem you have,
+            just upload the photo focussing on the diseased part.</p> -->
+        </div>
+        <div class="container">
+            <!-- <div class="row">
+                <div class="col-xs-12">
+                    <label class="cabinet center-block">
+                        <figure>
+                            <img width="30%" src="" class="gambar img-responsive img-thumbnail" id="item-img-output" />
+                            <figcaption><i class="fa fa-camera"></i></figcaption>
+                        </figure>
+                        <input type="file" class="item-img file center-block" name="file_photo" />
+                    </label>
+                </div>
+            </div> -->
+
+            <div class="row">
+                <div style="margin: auto; padding: 0;" class="col-xs-12">
+                    <label class="cabinet center-block">
+                        <figure>
+                            <img style="width: 100%;" src="" class="gambar img-responsive img-thumbnail"
+                                id="item-img-output" />
+                            <!-- <figcaption><i class="fa fa-camera"></i></figcaption> -->
+                        </figure>
+                        <input type="file" class="item-img file center-block" name="file_photo" />
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="cropImagePop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            <?=multiLanguage( "Edit Foto" , "Edit Photo" )?>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="upload-demo" class="center-block"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" id="cropImageBtn" class="btn btn-primary">Crop</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- partial -->
+
+
+        <div class="container2">
+            <div class="section-title">
+                <h2>Select the image that best matches with your skin problem</h2>
+                <!-- <p>If your skin disease, matches with the images shown below, Wohoo! we already know the problem you have,
+            just upload the photo focussing on the diseased part.</p> -->
+                <form id="imageSelectionForm">
+
+                    <div class="slide-containerfc">
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Acne.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Acne.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Atopic Dermatitis.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Atopic Dermatitis.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Bacterial Infection.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Bacterial Infection.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Benign Tumor (Not dangerous).jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Benign Tumor (Not dangerous).jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Bulbous Disease.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Bulbous Disease.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Connective Tissue Disease.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Connective Tissue Disease.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Drug Eruptions.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Drug Eruptions.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Eczema.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Eczema.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Fungal Infections.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Fungal Infections.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Hair Disease.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Hair Disease.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Healthy (2).jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Healthy (2).jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Healthy.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Healthy.jpg" alt="">
+                            </label>
+                        </div>
+
+
+
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Malignant Lesions.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Malignant Lesions.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Nail Disease or Fungus.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Nail Disease or Fungus.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage"
+                                    value="Neurofibromatosis (Systemic Disease).jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Neurofibromatosis (Systemic Disease).jpg" alt="">
+                            </label>
+                        </div>
+
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Poison Ivy (Contact Dermatitis).jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Poison Ivy (Contact Dermatitis).jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage"
+                                    value="Psoriasis, Lichen Planus or related.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Psoriasis, Lichen Planus or related.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Skin Cancer.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Skin Cancer.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage"
+                                    value="Spider or Tick Bite, or other Infestation.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Spider or Tick Bite, or other Infestation.jpg"
+                                    alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Urticaria Hives.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Urticaria Hives.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Vascular Tumor.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Vascular Tumor.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Vasculitis.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Vasculitis.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Viral Infection.jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Viral Infection.jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Vitiligo (Healthy).jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Vitiligo (Healthy).jpg" alt="">
+                            </label>
+                        </div>
+                        <div class="slide-image">
+                            <label>
+                                <input type="radio" name="selectedImage" value="Warts (STDs).jpg" />
+                                <img src="assets/img/WEBSITE_SAMPLES/Warts (STDs).jpg" alt="">
+                            </label>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+
+        <!-- Pincode input -->
+        <div class="pinc">
+            <div class="col-md-12 form-group">
+                <h1>Enter Your City Pin Code Here</h1>
+                <input type="text" name="pincode" class="form-control" id="pincode"
+                    placeholder="Enter Your City Pin Code Here" data-rule="minlen:4"
+                    data-msg="Please enter at least 4 chars">
+                <div class="validate"></div>
+                <br>
+                <input type="submit" class="dashbtn" value="Submit">
+                <!-- <button type="submit" class="dashbtn">Submit</button> -->
+            </div>
+        </div>
+        </form>
+        <div class="outputcont">
+            <p style="text-align: center; font-size: 2rem;" class="output">Here Comes the output</p>
+        </div>
+        </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- CHANGESSSSS COMEENTTT CHECKKKK -->
+
+
+    <!-- Image Cropper JS FILE -->
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src='https://foliotek.github.io/Croppie/croppie.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/detect.js"></script>
+
+</body>
+
+</html>
