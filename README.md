@@ -1,4 +1,4 @@
-# Swasthya Sandhan - MICROSOFT IMAGINE CUP'24
+# Swasthya Sandhan 
 
 
 ## Proposed Approach
