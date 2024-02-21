@@ -1,5 +1,10 @@
 # Swasthya Sandhan 
-
+The novelty and superiority of our proposed approach lie in its integration of Quantum Computing and Deep Learn-
+ing. By leveraging quantum image conversion and ensemble learning, our methodology combines the computational
+power of quantum computing with the flexibility of deep learning. This hybrid model not only enhances the efficiency
+of DR detection but also mitigates the reliance on massive labeled datasets, making it more adaptable to diverse data
+acquisition environments. In doing so, our approach addresses the limitations of conventional CNN models, offering
+a more reliable and innovative solution for accurate DR detection.
 
 ## Proposed Approach
 
